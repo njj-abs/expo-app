@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import Appstyles from './App.scss';
 
 export default function App() {
   const [ state, setState ] = useState({ count: 0 });
+ 
 
+  console.log({Appstyles});
   return (
-    <View style={styles.container}>
+    <View style={Appstyles.container}>
       <Text style={styles.text}>Open up App.js to start working on your app!</Text>
       <StatusBar style="dark" />
       <Text>{state.count}</Text>
