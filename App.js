@@ -3,8 +3,16 @@ import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Appstyles from './App.scss';
 
+const delay = 5000;
+
 export default function App() {
   const [ state, setState ] = useState({ count: 0 });
+
+  useEffect(() => {
+      setInterval(() => {
+        setState({ count: state.count + 1 });
+      }, delay);
+  }, []);
  
 
   console.log({Appstyles});
