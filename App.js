@@ -1,31 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import IncreaseCount from './components/IncreaseCount';
+import React from "react";
+import { createTheme, ThemeProvider } from "@rneui/themed";
+import Component from "./components";
+
+const theme = createTheme({
+  lightColors: {},
+  darkColors: {},
+});
 
 export default function App() {
-  const [ state, setState ] = useState({ count: 0 });
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Open up App.js to start working on your app!</Text>
-      <StatusBar style="dark" />
-      <SafeAreaProvider>
-        <IncreaseCount {...{state, setState, styles}}></IncreaseCount>
-      </SafeAreaProvider>
-      </View>
+    <ThemeProvider theme={theme}>
+      <Component />
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:'#525254',
-  },
-  text:{
-    color: '#fff'
-  }
-});
