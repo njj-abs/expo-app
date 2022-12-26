@@ -1,26 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-
-const delay = 5000;
+import { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import IncreaseCount from './components/IncreaseCount';
 
 export default function App() {
   const [ state, setState ] = useState({ count: 0 });
-
-  useEffect(() => {
-      setInterval(() => {
-        setState({ count: state.count + 1 });
-      }, delay);
-  }, []);
- 
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Open up App.js to start working on your app!</Text>
       <StatusBar style="dark" />
-      <Text>{state.count}</Text>
-      <Button title='IncreaseCount' color={'red'} onPress={() => setState({ count: state.count + 1 })}/>
-    </View>
+      <SafeAreaProvider>
+        <IncreaseCount {...{state, setState, styles}}></IncreaseCount>
+      </SafeAreaProvider>
+      </View>
   );
 }
 
