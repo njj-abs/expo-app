@@ -23,7 +23,8 @@
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.18.9",
     "sass": "^1.57.1",
-    "expo-contacts": "~11.0.1"
+    "expo-contacts": "~11.0.1",
+    "expo-sms": "~11.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
