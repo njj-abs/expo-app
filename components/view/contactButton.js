@@ -1,4 +1,4 @@
-import { Button } from "@rneui/base";
+import { Button } from "@rneui/themed";
 import * as Contacts from 'expo-contacts';
 
 const getStatus = {

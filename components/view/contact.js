@@ -1,4 +1,4 @@
-import { Text } from "@rneui/base";
+import { Text } from "@rneui/themed";
 import ContactButton from "./contactButton";
 
 const Contact = (context) =>
