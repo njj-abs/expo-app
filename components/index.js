@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {  View } from "react-native";
-import useStyles from "../styles"
+import useStyles from "./styles"
 import Theme from "./Theme";
 import Contact from "./view/contact";
 
