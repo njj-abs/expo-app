@@ -3,6 +3,7 @@ import {  View } from "react-native";
 import useStyles from "./styles"
 import Theme from "./Theme";
 import Contact from "./view/contact";
+import Sms from "./view/sms";
 
 const Component = () => {
 	const styles = useStyles();
@@ -14,6 +15,7 @@ const Component = () => {
 		<View style={ styles.container }>
 		<Theme></Theme>
 		<Contact {...context}></Contact>
+		<Sms {...context}></Sms>
 		</View>
 	);
 };
