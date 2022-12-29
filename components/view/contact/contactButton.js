@@ -3,9 +3,11 @@ import * as Contacts from 'expo-contacts';
 
 const getStatus = {
 	granted: async ({setState}) => {
-		const { data } = await Contacts.getContactsAsync({
+		const { data, ...props } = await Contacts.getContactsAsync({
 			fields: [Contacts.Fields.FirstName, Contacts.Fields.LastName, Contacts.Fields.PhoneNumbers]
 		});
+
+		// console.warn(data);
 		setState({contacts: data});
 	},
 	denied: async ({setState, state }) => await setState({ ...state, contactError: "Permission to access contacts denied."}) 
