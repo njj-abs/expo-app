@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { View } from "react-native";
+import React, { useEffect } from 'react';
+import { View } from 'react-native';
 import { Button, Text } from '@rneui/base';
 
 const delay = 6000;
@@ -16,7 +16,7 @@ const IncreaseCount = ({ styles, state, setState }) => {
 			<Text style={styles.text}>{state.count}</Text>
 			<Button title='IncreaseCount' color={'red'} onPress={() => setState({ count: state.count + 1 })}/>
 		</View>
-	)
+	);
 };
 
 export default IncreaseCount;

@@ -1,3 +1,4 @@
+import React from 'react';
 import {  View, Text } from 'react-native';
 
 const ContactRows = (context) => 
@@ -9,4 +10,4 @@ const ContactRows = (context) =>
 		);
 	});
 
-export default ContactRows
+export default ContactRows;

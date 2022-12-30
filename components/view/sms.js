@@ -1,5 +1,6 @@
-import { Button } from "@rneui/themed";
-import { View } from "react-native";
+import React from 'react';
+import { Button } from '@rneui/themed';
+import { View } from 'react-native';
 import * as SMS from 'expo-sms';
 
 const getAccessSMS = async () => {
@@ -18,4 +19,4 @@ const Sms = (context) =>
 		}></Button>
 	</View>;
 
-export default Sms
+export default Sms;

@@ -32,6 +32,6 @@ const Location = (context) => {
 			<Text >{JSON.stringify(context.state.location)}</Text>
 		</View>
 	);
-}
+};
 
 export default Location;
