@@ -2,51 +2,32 @@ import { Button } from "@rneui/themed";
 import * as Contacts from 'expo-contacts';
 
 const addContact = async () => {
-    const contact = {
-        [Contacts.Fields.FirstName]: 'Bird',
-        [Contacts.Fields.LastName]: 'Man',
-        [Contacts.Fields.Company]: 'Young Money',
-      };
-      const contactId = await Contacts.addContactAsync(contact);
-
-      console.warn(contactId);
-};
-
-const AddContactButton = () =>
-<Button
-title="Add contact"
-onPress={async () => {
   const contact = {
-    [Contacts.Fields.FirstName]: "Test",
-    [Contacts.Fields.LastName]: "McTest",
+    [Contacts.Fields.FirstName]: 'A',
+    [Contacts.Fields.LastName]: 'Man',
+    [Contacts.Fields.Company]: 'Young Money',
     [Contacts.Fields.PhoneNumbers]: [
       {
-        number: "(123) 456-7890",
-        isPrimary: true,
-        digits: "1234567890",
-        countryCode: "PA",
-        id: "1",
-        label: "main",
-      },
-    ],
-    [Contacts.Fields.Emails]: [
-      {
-        email: "test@gmail.com",
-        isPrimary: true,
-        id: "2",
-        label: "main",
-      },
-    ],
+        id: String(Math.random()).slice(2),
+        label: 'person',
+        countryCode: '+91',
+        number: '1234567890',
+      }
+    ]
   };
-
-  await Contacts.addContactAsync(contact)
+  const contactId = await Contacts.addContactAsync(contact)
     .then((contactId) => {
-      alert("Se creó exitosamente");
+      alert("Add Successfully" + contactId);
     })
     .catch((err) => {
       alert(err);
       console.log(err);
     });
-}}>
-</Button>
+};
+
+const AddContactButton = () =>
+  <Button
+    title="Add contact"
+    onPress={async () => await addContact()}>
+  </Button>
 export default AddContactButton
