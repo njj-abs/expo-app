@@ -1,3 +1,4 @@
+import 'expo-dev-client';
 import React from "react";
 import { createTheme, ThemeProvider } from "@rneui/themed";
 import Component from "./components";

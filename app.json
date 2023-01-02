@@ -24,17 +24,28 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.njj.expoapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "packagerOpts": {
       "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "scss", "sass"]
+      "sourceExts": [
+        "js",
+        "jsx",
+        "scss",
+        "sass"
+      ]
     },
     "permissions": [
       "android.permission.WRITE_CONTACTS"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "36404abb-5812-4704-a94e-76d0354bae1d"
+      }
+    }
   }
 }
