@@ -15,7 +15,7 @@ const addContact = async () => {
       }
     ]
   };
-  const contactId = await Contacts.addContactAsync(contact)
+  const contactId = await Contacts.presentFormAsync(null,contact)
     .then((contactId) => {
       alert("Add Successfully" + contactId);
     })
