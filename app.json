@@ -39,9 +39,6 @@
         "sass"
       ]
     },
-    "permissions": [
-      "android.permission.WRITE_CONTACTS"
-    ],
     "extra": {
       "eas": {
         "projectId": "36404abb-5812-4704-a94e-76d0354bae1d"
