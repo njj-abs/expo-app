@@ -3,6 +3,7 @@ import {  View } from 'react-native';
 import useStyles from './styles';
 import Theme from './Theme';
 import Contact from './view/contact';
+import FileManager from './view/FileManager';
 import Location from './view/location';
 import Sms from './view/sms';
 
@@ -18,6 +19,7 @@ const Component = () => {
 			<Contact {...context}></Contact>
 			<Sms {...context}></Sms>
 			<Location {...context}></Location>
+			<FileManager></FileManager>
 		</View>
 	);
 };
