@@ -3,6 +3,7 @@ import React from 'react';
 import { createTheme, ThemeProvider } from '@rneui/themed';
 import Component from './src/components';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native';
 
 const theme = createTheme({
 	lightColors: {},
@@ -13,7 +14,9 @@ export default function App() {
 	return (
 		<SafeAreaProvider>
 			<ThemeProvider theme={theme}>
-				<Component />
+				<ScrollView>
+					<Component />
+				</ScrollView>
 			</ThemeProvider>
 		</SafeAreaProvider>
 	);
