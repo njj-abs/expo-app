@@ -1,7 +1,7 @@
 import 'expo-dev-client';
 import React from 'react';
 import { createTheme, ThemeProvider } from '@rneui/themed';
-import Component from './components';
+import Component from './src/components';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const theme = createTheme({

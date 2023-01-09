@@ -5,7 +5,7 @@ const RemoveHelper = async (context) => {
 		fields: [Contacts.Fields.FirstName, Contacts.Fields.LastName, Contacts.Fields.PhoneNumbers]
 	});
 
-	console.warn(data.length)
+	console.warn(data.length);
 
 	return data.length === context.state.contacts.length;
 };

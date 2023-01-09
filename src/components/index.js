@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import {  View } from 'react-native';
 import useStyles from './styles';
 import Theme from './Theme';
-import Contact from './view/contact';
-import FileManager from './view/FileManager';
-import Location from './view/location';
-import Sms from './view/sms';
+import Contact from './contact';
+import FileManager from './FileManager';
+import Location from './location';
+import Sms from './sms';
 
 const getState = { 
 	contacts: [], 
