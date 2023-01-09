@@ -7,9 +7,15 @@ import FileManager from './view/FileManager';
 import Location from './view/location';
 import Sms from './view/sms';
 
+const getState = { 
+	contacts: [], 
+	location: 'Loading...',
+	files: []
+};
+
 const Component = () => {
 	const styles = useStyles();
-	const [ state, setState ] = useState({ contacts:[], location: 'Waiting...'});
+	const [ state, setState ] = useState(getState);
 
 	const context = { state, setState, styles };
 
@@ -19,7 +25,7 @@ const Component = () => {
 			<Contact {...context}></Contact>
 			<Sms {...context}></Sms>
 			<Location {...context}></Location>
-			<FileManager></FileManager>
+			<FileManager {...context}></FileManager>
 		</View>
 	);
 };
