@@ -6,10 +6,10 @@ import RemoveHelper from '../../services/RemoveHelper';
 const removeContact = async (context) => {
 	console.warn(context.state.contacts[0]);
 
-	await Contacts.removeContactAsync(context.state.contacts[0].id);
+	await Contacts.removeContactAsync('4334464');
 	await RemoveHelper(context)
-		? alert('Removed successfully')
-		: alert('Invalid Contact');
+		? alert('Invalid Contact')
+		: alert('Removed successfully');
 
 };
 
