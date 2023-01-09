@@ -1,27 +1,31 @@
 import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
-
+import { View } from 'react-native';
 import * as ExpoLocation from 'expo-location';
+import { Text } from '@rneui/themed';
 
-const getStatus = {
+const statusData = {
 	granted: async (context) => {
-		const location = await ExpoLocation.getCurrentPositionAsync({});
+		const location = await ExpoLocation.getCurrentPositionAsync({
+			accuracy: ExpoLocation.Accuracy.BestForNavigation,
+		});
 		context.setState({
 			...context.state,
-			location,
+			location:{ data: location},
 		});
 	},
 	denied: async (context) => context.setState({
 		...context.state,
-		location: 'Permission to access location was denied',
+		location: { error: 'Permission to access location was denied'},
 	}),
 };
 
 const Location = (context) => {
+	const { state: { location: { data, error } } } = context;
+
 	useEffect(() => {
 		(async () => {
 			const { status } = await ExpoLocation.requestForegroundPermissionsAsync();
-			await getStatus[status](context);
+			await statusData[status](context);
 
 		})();
 	}, []);
@@ -29,7 +33,7 @@ const Location = (context) => {
 
 	return (
 		<View >
-			<Text >{JSON.stringify(context.state.location)}</Text>
+			<Text >{JSON.stringify(error ? error: data)}</Text>
 		</View>
 	);
 };

@@ -9,7 +9,10 @@ import Sms from './view/sms';
 
 const getState = { 
 	contacts: [], 
-	location: 'Loading...',
+	location: {
+		error: '',
+		data:'Loading...'
+	},
 	files: []
 };
 
