@@ -4,7 +4,7 @@ import Contact from './contact';
 import FileManager from './FileManager';
 import Location from './location';
 import Sms from './sms';
-
+import ReadFile from './ReadFile';
 
 const Examples = [
 	Theme,
@@ -12,6 +12,7 @@ const Examples = [
 	FileManager,
 	Location,
 	Sms,
+	ReadFile
 ];
 
 export default Examples;

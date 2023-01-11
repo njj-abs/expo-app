@@ -11,19 +11,21 @@ const requestFilePermission = async (context) => {
 			'content://com.android.externalstorage'
 		);
 
-	const files = await FileSystem.StorageAccessFramework.readDirectoryAsync(permissions.directoryUri);
+	const data = await FileSystem.StorageAccessFramework.readDirectoryAsync(permissions.directoryUri);
 
 	permissions.granted && context.setState({
 		...context.state,
-		files,
+		files:{
+			...context.state.files,
+			data
+		},
 	});
-
 };
 
 const FileManager = (context) =>
 	<View>
 		<Button title="Open FileManager" onPress={() => requestFilePermission(context)} />
-		{ context.state.files.map((file, key) =>
+		{ context.state.files.data.map((file, key) =>
 			<Text key={ key }>{ file }</Text>
 		)}
 	</View>;

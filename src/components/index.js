@@ -10,7 +10,10 @@ const getState = {
 		error: '',
 		data:'Loading...'
 	},
-	files: []
+	files:{
+		data:[],
+		read: ''
+	}
 };
 
 const Component = () => {
