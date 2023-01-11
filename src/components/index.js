@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import {  View } from 'react-native';
+import Examples from './Examples';
 import useStyles from './styles';
-import Theme from './Theme';
-import Contact from './contact';
-import FileManager from './FileManager';
-import Location from './location';
-import Sms from './sms';
+
 
 const getState = { 
 	contacts: [], 
@@ -24,11 +21,9 @@ const Component = () => {
 
 	return(
 		<View style={ styles.container }>
-			<Theme></Theme>
-			<Contact {...context}></Contact>
-			<Sms {...context}></Sms>
-			<Location {...context}></Location>
-			<FileManager {...context}></FileManager>
+			{ Examples.map((Example, key) =>
+				<Example key={ key } { ...context }/>
+			)}
 		</View>
 	);
 };
